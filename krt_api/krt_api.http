@@ -1,0 +1,39 @@
+﻿@krt_api_HostAddress = https://localhost:7061
+@contentType = application/json
+@accept = application/json
+
+### Create Account
+# o CPF precisa ser válido em formato e sem pontos ou traços
+POST {{krt_api_HostAddress}}/accounts/create
+Accept: {{accept}}
+Content-Type: {{contentType}}
+{
+    "name": "Adriana Pinto de Freitas",
+    "cpf": "60715287125"
+}
+
+### Update Account
+PUT {{krt_api_HostAddress}}/accounts/update
+Accept: {{accept}}
+Content-Type: {{contentType}}
+{
+    "name": "Adriana Pinto de Freitas edit",
+    "cpf": "60715287125",
+    "id": "40ba4aec-5cfa-4c79-8e95-78c1f46d7ead"
+}
+
+### Get Account
+GET {{krt_api_HostAddress}}/accounts/40ba4aec-5cfa-4c79-8e95-78c1f46d7ead
+Accept: {{accept}}
+
+### Get all Accounts paginate
+# filter => nome ou CPF (padrão: todos)
+# status => 1=Ativa | 2=Inativa (padrão: todos)
+# orderBy => 1=Asc | 2=Desc (padrão: Desc)
+# page => número da página (padrão: 1)
+GET {{krt_api_HostAddress}}/accounts/get-all?status=1&page=1
+Accept: {{accept}}
+
+### Delete Account (passa o status para inativo)
+DELETE {{krt_api_HostAddress}}/accounts/40ba4aec-5cfa-4c79-8e95-78c1f46d7ead
+Accept: {{accept}}
