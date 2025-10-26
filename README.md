@@ -42,7 +42,7 @@ Isso significa que os dados da conta permanecem armazenados como um histórico, 
 Enquanto existir uma conta com o CPF ativo, o sistema não permite criar outra com o mesmo CPF. No entanto, se a conta estiver inativa, o usuário pode criar uma nova normalmente,
 garantindo segurança e controle dos dados sem comprometer a experiência do usuário.
 
-# KRT_API => Técnologias
+# KRT_API => Tecnologias
 - .NET 8
 - FluentValidation
 - EntityFramework ( PostgreSQL )
